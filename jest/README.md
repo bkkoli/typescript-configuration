@@ -19,6 +19,27 @@ module.exports = {
 ```
 
 ## 2. Via ts-jest
+
+> Install Dependencies
 ```bash
 npm i -D ts-jest @types/jest
+```
+
+> Modify jest configuration
+```json
+// OR package.json
+{
+  // ...
+  "jest": {
+    "extensionsToTreatAsEsm": [".ts"],
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
+  }
+}
 ```
